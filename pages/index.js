@@ -29,7 +29,7 @@ const Banner = ({
       <Text fontSize="lg" paddingTop="3" paddingBottom="3" color="gray.700">
         {desc1} <br /> {desc2}
       </Text>
-      <Button size="xl">
+      <Button size="lg">
         <Link href={linkName}>{buttonText}</Link>
       </Button>
     </Box>
@@ -64,9 +64,12 @@ export default function Home({ propertiesForSale, propertiesForRent }) {
         linkName="/search?purpose=for-sale"
         imageUrl="https://bayut-production.s3.eu-central-1.amazonaws.com/image/110993385/6a070e8e1bae4f7d8c1429bc303d2008"
       />
+      <Flex flexWrap="wrap">
+
       {propertiesForSale.map((property) => (
         <Property property={property} key={property.id} />
       ))}
+      </Flex>
     </Box>
   );
 }
